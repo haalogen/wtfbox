@@ -31,18 +31,16 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display: flex;
-  border: 10px solid goldenrod;
-  min-height: 100vh; /* Viewport Height */
-  /* flex-wrap: nowrap; */ /* default */
-
-  /* cross-axis goes from bottom to top  */
-  /* flex-wrap: wrap-reverse; */
-  flex-wrap: wrap;
-
-  flex-direction: column;
+  border: 10px solid thistle;
+  min-height: 100vh;
+  flex-wrap: wrap; /* give true width of flex items */
+  /* align-content -- says what to do with extra space on CROSS axis */
+  /* only works if we have MULTIPLE LINES of html elements */
+  /* default: stretch;
+   also: flex-end, center, space-between, space-around */
+   align-content: space-between;
 }
 
 .box {
-  width: calc(33.333333% - 20px);
-  margin: 10px; /* margin isn't in element box model */
+  width: 33%;
 }

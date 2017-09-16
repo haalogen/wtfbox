@@ -9,7 +9,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* Some default styles to make each box visible */
 .box {
   color:white;
-  font-size: 100px;
+  font-size: 50px;
   text-align: center;
   text-shadow:4px 4px 0 rgba(0,0,0,0.1);
   padding:10px;
@@ -31,18 +31,26 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display: flex;
-  border: 10px solid goldenrod;
-  min-height: 100vh; /* Viewport Height */
-  /* flex-wrap: nowrap; */ /* default */
-
-  /* cross-axis goes from bottom to top  */
-  /* flex-wrap: wrap-reverse; */
-  flex-wrap: wrap;
-
-  flex-direction: column;
 }
 
-.box {
-  width: calc(33.333333% - 20px);
-  margin: 10px; /* margin isn't in element box model */
+.box1 {
+  flex-basis: 400px; /* in an ideal world */
+
+  /*  'flex-grow' says what to do if there's EXTRA room */
+  /* default: 0 -- "do nothing" */
+  flex-grow: 1;
+
+  /* "degree of shrinking" */
+  /* default: 1 */
+  flex-shrink: 0;
+
+  /* shorthand: grow, shrink, basis */
+  flex: 1 0 400px;
 }
+
+.box2 {
+  flex-basis: 400px; /* in an ideal world */
+  flex-grow: 3;
+  flex-shrink: 3;
+}
+

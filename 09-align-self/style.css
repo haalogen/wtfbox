@@ -31,18 +31,28 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display: flex;
-  border: 10px solid goldenrod;
-  min-height: 100vh; /* Viewport Height */
-  /* flex-wrap: nowrap; */ /* default */
+  border: 10px solid thistle;
+  min-height: 100vh;
+  align-items: flex-start;
 
-  /* cross-axis goes from bottom to top  */
-  /* flex-wrap: wrap-reverse; */
-  flex-wrap: wrap;
-
-  flex-direction: column;
 }
 
 .box {
-  width: calc(33.333333% - 20px);
-  margin: 10px; /* margin isn't in element box model */
+  width: 33.3333%;
+}
+
+.box2 {
+  padding-bottom: 200px;
+  /* align-self aligns INDIVIDUAL flex-item */
+  align-self: center;
+}
+
+.box6 {
+  padding-bottom: 0;
+  align-self: stretch;
+}
+
+.box9 {
+  padding-bottom: 50px;
+  align-self: flex-end;
 }
